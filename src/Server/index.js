@@ -17,7 +17,14 @@ app.get('/',async(req,res)=>{
 
 })
 
-app.listen(8080,()=>{
+app.listen(8080,async ()=>{
+try{
+await mongoose.connect('mongodb+srv://ayaznoori15:Alam%40123@cluster0.tfjgqr1.mongodb.net/user?retryWrites=true&w=majority')
+console.log("hello")
+}
+catch(err){
+  console.log(err)
+}
 
-mongoose.connect('mongodb://127.0.0.1:27017/Nooridev',()=>console.log('db connected successfuly'));
+
 console.log('server is running at port 8080')});
