@@ -1,0 +1,19 @@
+.head{
+    background-color: rgb(16, 132, 126);
+    height: 95px;
+  }
+  .head > img {
+    width: 39%;
+    padding-top: 25px;
+    display: flex;
+    background-color: rgb(16, 132, 126);
+    height: 45px;
+    padding-left: 4%;
+  }
+  .headright > img {
+    margin-left: 250px;
+    height: 70px;
+    margin-top: -80px;
+    width: 130px;
+    float: left;
+  }
