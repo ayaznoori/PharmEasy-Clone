@@ -1,0 +1,4 @@
+.testBox:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px 1px 4px;
+}
