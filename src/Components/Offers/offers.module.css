@@ -1,0 +1,23 @@
+.container{
+    margin-top: 40px;
+}
+.box{
+    width: 132px;
+    height: 154px;
+    padding: 10px;
+    cursor: pointer;
+}
+.box:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 8px;
+}
+.heading{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.discount{
+    font-size: 13px;
+    font-weight: 600;
+    color: rgb(251, 98, 98);
+}
