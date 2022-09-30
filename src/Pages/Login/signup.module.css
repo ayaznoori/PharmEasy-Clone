@@ -1,0 +1,73 @@
+
+    .lohead {
+        width: 90%;
+        height: 90px;
+        background-color: rgb(16, 132, 126);
+      }
+      .head{
+        background-color: rgb(16, 132, 126);
+        height: 95px;
+      }
+      .head > img {
+        width: 39%;
+        padding-top: 25px;
+        display: flex;
+        background-color: rgb(16, 132, 126);
+        height: 45px;
+        padding-left: 4%;
+      }
+      .headright > img {
+        margin-left: 250px;
+        height: 70px;
+        margin-top: -80px;
+        width: 130px;
+        float: left;
+      }
+      .login {
+       margin-left: 23px;
+        font-weight: bold;
+        width: 80%;
+        font-size: 17px;
+        color: 
+        #525b61;
+      }
+      
+      .go {
+        margin-top: 20px;
+        width: 84%;
+        padding: 17px 8px;
+        font-size: 15px;
+        font-weight: 700;
+        border-radius: 5px;
+        color: white;
+        background-color: teal;
+        margin-bottom: 15px;
+        margin-left: 20px;
+        border: none;
+      }
+      .entry > input {
+        text-align: left;
+        padding-left: 16px;
+        width: 80%;
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 15px;
+        height: 45px;
+        border-radius: 5px;
+        border: 0.5px solid rgb(75, 74, 74);
+      }
+      .foot {
+        margin-left: 23px;
+        font-size: 13px;
+        color: rgb(105, 97, 97);
+        width: 80%;
+      }
+      .foot > a {
+        color: teal;
+        font-size: 14px;
+      }
+      .main {
+        width: 100%;
+       position: absolute;
+       right: 6px;
+      }
