@@ -2,8 +2,8 @@ const express=require('express');
 const mongoose=require('mongoose');
 const userModel = require('./Schema/userSchema');
 const nodemailer=require('nodemailer');
-const jwt =require('jsonwebtoken');
 const OtpModel = require('./Schema/otpSchema');
+const productModel = require('./Schema/products');
 const app=express();
 
 app.use(express.json());
@@ -59,12 +59,12 @@ app.post('/verify',async(req,res)=>{
 //user Signup
 app.post('/signup',async (req,res)=>{
   let data=req.body;
-  if(data.email && data.password !=""){
+  if(data.email){
          const check= await userModel.find({email:data.email});                                                     // checking that user already present
          if(check.length>0){
-               res.status(400).send({"errormsg": "This Email id already exist"})      // return already present if present in db
+               res.status(200).send(check)      // return already present if present in db
           } 
-          else{
+        else{
               const user=new userModel(data);
               user.save((err,result)=>
               {
@@ -81,24 +81,66 @@ app.post('/signup',async (req,res)=>{
   else{
       res.status(400).send({'errormsg':'all field mandetory'});                       //error if some feild is blank
   }
-
 });
 
-//user Login
+//updating user
+app.post('/updateUser',async (req,res)=>{
+  let data=req.body;
+  if(data.email){
+         const check= await userModel.find({email:data.email});              // checking that user already present
+         if(check.length>0){     
+              const user= await userModel.updateOne({email:data.email},data);
+              res.send(user)
+        }
+        else {
+            res.send({'errormsg':'email not found'});
+        }   
+  }
+  else{
+      res.status(400).send({'errormsg':'all field mandetory'});                       //error if some feild is blank
+  }
+});
 
-app.post('/login',async(req,res)=>{
- let data=req.body;
- let check=await userModel.aggregate([{$match:{email:data.email,password:data.password}}]);
- if(check.length==1){
-     let token=jwt.sign({id:check[0]._id,email:check[0].email},"ayaztokenkey",{expiresIn:'30 min'});
-     let refreshtoken=jwt.sign({},"ayazrefreshkey",{expiresIn:'7 days'});
-     res.status(200).send({token:token,refreshtoken:refreshtoken});
- }
- else{
-  res.status(401).send({errormsg:"Incorrect email or password"})
- }
+
+//used for inserting data in database mongo
+/* app.post('/ppp',async(req,res)=>{
+    const data=req.body;
+    console.log(data);
+    try{
+      for(let i=0;i<data.length;i++){
+        const user=new productModel(data[i]);
+        user.save();
+      }
+    }
+    catch(err){
+      res.status(400).send({'errormsg':'something went wrong'})
+    }
+      res.status(201).send(data)                                      
+}) */
+
+//fetch data categorywise
+app.get('/products',async(req,res)=>{
+  if(req.query.category){
+    const data=await productModel.find({category:req.query.category});
+    res.send(data);
+  }
+  else if(req.query.name){
+    const data=await productModel.find({name:{ $regex: `${req.query.name}`, $options: 'i' }});
+    res.send(data)
+  }
+  else{
+    const data=await productModel.find();
+    res.send(data);
+  }
+ 
 })
 
+//fetch medicine name using id
+app.get('/products/:id',async(req,res)=>{
+  let id=req.params.id;
+  const data=await productModel.find({_id:id});
+  res.send(data)
+})
 
 app.listen(8080,async ()=>{
 try{
@@ -108,6 +150,5 @@ console.log("hello")
 catch(err){
   console.log(err)
 }
-
 
 console.log('server is running at port 8080')});
