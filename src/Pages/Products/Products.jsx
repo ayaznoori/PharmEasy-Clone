@@ -1,9 +1,16 @@
 import {
   Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Checkbox,
+  Flex,
   Grid,
   Heading,
   Image,
   Input,
+  InputGroup,
+  InputRightElement,
   Radio,
   Select,
   Stack,
@@ -11,25 +18,18 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import AppSection from "./AppSection";
-import styles from "./beauty.module.css";
-import Pagination from "./Pagination";
+import styles from "./products.module.css";
+import { HiOutlineSearch } from "react-icons/hi";
+import {MdKeyboardArrowRight} from "react-icons/md";
 
 const Products = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(+searchParams.get("page") || 1);
+  const [sortData, setSortData] = useState([]);
+  const [change, setChange] = useState(true);
   const { category } = useParams();
-
-  const handleSorting = (e) => {
-    // setSort(e.target.value);
-  };
-
-  const handlePage = (page) => {
-    // setPage(page);
-  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,14 +47,50 @@ const Products = () => {
     getData();
   }, []);
 
+  const handleSorting = (e) => {
+    const { value } = e.target;
+    setChange(!change);
+    if (value === "asc") {
+      let asc = data.sort((a, b) => {
+        return a.offprice - b.offprice;
+      });
+      setSortData(asc);
+    } else if (value === "des") {
+      let des = data.sort((a, b) => {
+        return b.offprice - a.offprice;
+      });
+      setSortData(des);
+    }
+  };
+
   useEffect(() => {
-    setSearchParams({
-      page,
-    });
-  }, [page, setSearchParams]);
+    setData(sortData);
+  }, [change]);
+
   return (
     <div>
       <div className={styles.container}>
+        <div style={{marginBottom:"40px", display:"flex", alignItems:"center"}}>
+          <Breadcrumb color="gray.800" separator={<MdKeyboardArrowRight fontSize={"14px"} />}>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="http://localhost:3000" fontSize={"13px"} color="gray.800">
+                Home
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#" fontSize={"13px"} color="gray.800">
+                All Categories
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem isCurrentPage>
+              <BreadcrumbLink href="#" fontSize={"13px"} color="gray.500">
+                {category.toUpperCase()}
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </Breadcrumb>
+        </div>
         <Stack direction="horizontal" gap="50px">
           <Stack width="25%" textAlign="left">
             <Heading fontSize="26px" fontWeight="600" marginBottom="40px">
@@ -74,33 +110,89 @@ const Products = () => {
               <Radio type="radio" colorScheme="teal" isChecked size="lg" />
             </Stack>
             <hr />
-            {/* <Heading fontSize="16px" fontWeight="700" paddingTop="30px">
+            <Heading
+              fontSize="16px"
+              fontWeight="700"
+              style={{ marginTop: "20px", marginBottom: "15px" }}
+            >
+              Brand
+            </Heading>
+            <InputGroup>
+              <InputRightElement
+                color={"gray.400"}
+                children={<HiOutlineSearch fontSize={"24px"} />}
+              />
+              <Input
+                marginBottom={"30px"}
+                type="text"
+                colorScheme="teal"
+                placeholder="Search"
+              />
+            </InputGroup>
+            <hr />
+            <Heading
+              fontSize="16px"
+              fontWeight="700"
+              style={{ marginTop: "20px" }}
+            >
               Price
             </Heading>
             <Stack
               direction="horizontal"
               justify="space-between"
               align="center"
-              paddingTop="25px"
+              paddingTop="15px"
+              paddingBottom="15px"
             >
-              <Input
-                type="text"
-                variant="outline"
-                width="100px"
-                placeholder="min"
-                onChange={(e) => setMin(e.target.value)}
-              />
-              <Heading fontSize="25px" fontWeight="400" color="gray.400">
-                -
-              </Heading>
-              <Input
-                type="text"
-                variant="outline"
-                width="100px"
-                placeholder="max"
-                onChange={(e) => setMax(e.target.value)}
-              />
-            </Stack> */}
+              <Text fontSize="14px" fontWeight={"500"}>
+                Below 99
+              </Text>
+              <Checkbox colorScheme="teal" size="lg" />
+            </Stack>
+            <Stack
+              direction="horizontal"
+              justify="space-between"
+              align="center"
+              paddingBottom="15px"
+            >
+              <Text fontSize="14px" fontWeight={"500"}>
+                100 - 199
+              </Text>
+              <Checkbox colorScheme="teal" size="lg" />
+            </Stack>
+            <Stack
+              direction="horizontal"
+              justify="space-between"
+              align="center"
+              paddingBottom="15px"
+            >
+              <Text fontSize="14px" fontWeight={"500"}>
+                200 - 299
+              </Text>
+              <Checkbox colorScheme="teal" size="lg" />
+            </Stack>
+            <Stack
+              direction="horizontal"
+              justify="space-between"
+              align="center"
+              paddingBottom="15px"
+            >
+              <Text fontSize="14px" fontWeight={"500"}>
+                300 - 399
+              </Text>
+              <Checkbox colorScheme="teal" size="lg" />
+            </Stack>
+            <Stack
+              direction="horizontal"
+              justify="space-between"
+              align="center"
+              paddingBottom="15px"
+            >
+              <Text fontSize="14px" fontWeight={"500"}>
+                400 - 499
+              </Text>
+              <Checkbox colorScheme="teal" size="lg" />
+            </Stack>
           </Stack>
           <Stack width="75%">
             <Stack
@@ -117,9 +209,9 @@ const Products = () => {
                   Sort By:
                 </Text>
                 <Select width="248px" height="39px" onChange={handleSorting}>
-                  <option value="">Popularity</option>
-                  <option value="price:0">Price Low to High</option>
-                  <option value="price:1">Price High to Low</option>
+                  <option value="">Select</option>
+                  <option value="asc">Price Low to High</option>
+                  <option value="des">Price High to Low</option>
                 </Select>
               </Stack>
             </Stack>
@@ -139,7 +231,7 @@ const Products = () => {
                   <Link to={`/product/${item._id}`}>
                   <Box
                     key={item._id}
-                    height="350px"
+                    height="330px"
                     width="230px"
                     padding="10px"
                     border="1px solid #e1e1e1"
@@ -152,25 +244,45 @@ const Products = () => {
                     >
                       <Image src={item.img1} height={"150px"} />
                     </Box>
-                    <Heading marginTop="20px" fontSize="16px" fontWeight="700">
+                    <Heading
+                      marginTop="20px"
+                      fontSize="16px"
+                      fontWeight="700"
+                      noOfLines={2}
+                    >
                       {item.name}
                     </Heading>
+                    <Flex
+                      gap={"10px"}
+                      position="absolute"
+                      bottom="40px"
+                      alignItems={"center"}
+                    >
+                      <Heading
+                        fontSize="13px"
+                        fontWeight="500"
+                        textDecoration={"line-through"}
+                        color="#8897A2"
+                      >
+                        {`MRP ₹${item.price}`}
+                      </Heading>
+                      <div className={styles.discount}>
+                        {`${item.offpercentage}% off`}
+                      </div>
+                    </Flex>
                     <Heading
                       fontSize="17px"
                       fontWeight="600"
                       position="absolute"
                       bottom="20px"
                     >
-                      {item.offprice === ""
-                        ? `Rs ${item.price}`
-                        : `Rs ${item.offprice}`}
+                      {`₹ ${item.offprice}`}
                     </Heading>
                   </Box>
                   </Link>
                 ))}
               </Grid>
             )}
-            {/* {!loading ? <Pagination handlePage={handlePage} page={page} /> : ""} */}
           </Stack>
         </Stack>
       </div>
