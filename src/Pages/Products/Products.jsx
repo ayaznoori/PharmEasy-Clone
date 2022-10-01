@@ -228,6 +228,7 @@ const Products = () => {
             ) : (
               <Grid templateColumns="repeat(3, 1fr)" gap={4}>
                 {data.map((item) => (
+                  <Link to={`/product/${item._id}`}>
                   <Box
                     key={item._id}
                     height="330px"
@@ -278,6 +279,7 @@ const Products = () => {
                       {`₹ ${item.offprice}`}
                     </Heading>
                   </Box>
+                  </Link>
                 ))}
               </Grid>
             )}
