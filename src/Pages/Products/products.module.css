@@ -1,0 +1,27 @@
+.container{
+    width: 70%;
+    margin: auto;
+    margin-top: 60px;
+    color: rgb(100, 100, 100);
+    text-align: left;
+}
+.hr{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.discount{
+    color: #fff;
+    background-image: url(https://assets.pharmeasy.in/web-assets/_next/icons/pdp-discount.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 12px;
+    padding: 5px 20px 5px 5px;
+    text-align: left;
+    min-width: 65px;
+    height: 20px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 600;
+}
