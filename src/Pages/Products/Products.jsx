@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import AppSection from "./AppSection";
 import styles from "./beauty.module.css";
 import Pagination from "./Pagination";
@@ -136,6 +136,7 @@ const Products = () => {
             ) : (
               <Grid templateColumns="repeat(3, 1fr)" gap={4}>
                 {data.map((item) => (
+                  <Link to={`/product/${item._id}`}>
                   <Box
                     key={item._id}
                     height="350px"
@@ -165,6 +166,7 @@ const Products = () => {
                         : `Rs ${item.offprice}`}
                     </Heading>
                   </Box>
+                  </Link>
                 ))}
               </Grid>
             )}

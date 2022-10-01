@@ -6,6 +6,8 @@ import Cart from './Pages/Cart/Cart';
 import Account from './Pages/AccountPage/Account';
 import Footer from './Components/Footer/Footer';
 import Home from './Pages/Homepage/Home';
+import SingleProduct from './Pages/Products/Product';
+import DummyProducts from './Pages/Products/DummyProducts';
 import Navbar from './Components/Navbar/Navbar';
 import Products from './Pages/Products/Products';
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/account/:id' element={<Account/>}/>
         <Route path='/cart' element={<Cart/>} />
+        {/* <Route path='/products' element={<DummyProducts/>} /> */}
+        <Route path = "/product/:id" element = {<SingleProduct />} />
       </Routes>
     <Footer/>   
     </div>
