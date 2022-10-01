@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  width: 92%;
+  margin: auto;
+  background-color: white;
+  align-items: center;
+  padding: 10px 0px 10px 25px;
+  gap: 45px;
+  color: black;
+}
+.LinkDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 83%;
+  height: 40px;
+}
+.pinButton {
+  background-color: white;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #37857e;
+  font-weight: 600;
+  width: 160px;
+  padding-left: 10px;
+}
+.downArrowIcon {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-size: 20px;
+  color: rgb(40, 40, 40);
+  border: none;
+}
+.links2 {
+  display: flex;
+  gap: 30px;
+}
+.links2Icons {
+  display: flex;
+  align-items: center;
+}

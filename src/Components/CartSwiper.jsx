@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import "./CartSwiper.css";
-import Button from "@mui/material/Button";
+import { Button } from '@chakra-ui/react'
 
 const CartSwiper = () => {
   return (
@@ -23,7 +23,7 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">10% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/I09432/neurobion-forte-tablet-30s-2-1656661904.jpg?dim=100x0&dpr=1.25&q=100"
-              alt="image"
+              alt="swiperImage"
               className="SwiperProductImage"
             />
           </div>
@@ -42,7 +42,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹30.23</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+            <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>
@@ -52,7 +60,7 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">12% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/071710/evion-400mg-strip-of-10-capsules-2-1656662057.jpg?dim=100x0&dpr=1.25&q=100"
-              alt="image"
+              alt="swiperimage"
               className="SwiperProductImage"
             />
           </div>
@@ -71,7 +79,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹31.23</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+          <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>
@@ -81,7 +97,7 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">15% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/226830/prega-news-pregnancy-test-kit-1-1641787797.jpg?dim=100x0&dpr=1.25&q=100"
-              alt="image"
+              alt="swiperimage"
               className="SwiperProductImage"
             />
           </div>
@@ -100,7 +116,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹46.23</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+          <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>
@@ -110,7 +134,7 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">14% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/000665/accu-chek-active-glucometer-test-strips-box-of-50-1-1654077435.jpg?dim=100x0&dpr=1.25&q=100"
-              alt="image"
+              alt="swiperimage"
               className="SwiperProductImage"
             />
           </div>
@@ -129,7 +153,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹902.13</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+          <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>
@@ -139,7 +171,7 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">24% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/I05582/dr-morepen-gluco-one-bg-03-glucometer-test-strips-box-of-50-1-1654168216.jpg?dim=100x0&dpr=1.25&q=100"
-              alt="image"
+              alt="swiperimage"
               className="SwiperProductImage"
             />
           </div>
@@ -158,7 +190,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹645.25</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+          <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>
@@ -168,13 +208,13 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">13% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/I32680/accu-chek-instant-glucometer-test-strips-box-of-50-2-1654166928.jpg?dim=100x0&dpr=1.25&q=100"
-              alt="image"
+              alt="swiperImage"
               className="SwiperProductImage"
             />
           </div>
           <div className="CartItemTitleWrapper">
             <p className="CartItemTitle">
-              Accu-chek Instant Glucometer
+              Accu-chek Instant Glucometer Test Strips
             </p>
           </div>
           <div className="ItemDesWrapper">
@@ -189,7 +229,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹912.63</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+          <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>
@@ -199,7 +247,7 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">19% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/I40164/durex-extra-dots-packet-of-10-condoms-3-1654166124.jpg?dim=100x0&dpr=1.25&q=100"
-              alt="image"
+              alt="swiperImage"
               className="SwiperProductImage"
             />
           </div>
@@ -220,7 +268,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹198.45</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+          <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>
@@ -230,7 +286,7 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">12% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/156565/saridon-headache-relief-tablet-strip-of-10-tablets-2-1641398741.jpg?dim=100x0&dpr=1.25&q=100"
-              alt="image"
+              alt="swiperimage"
               className="SwiperProductImage"
             />
           </div>
@@ -249,7 +305,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹37.22</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+          <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>
@@ -259,7 +323,7 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">20% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/269298/cetaphil-moisturising-lotion-sensitive-and-dry-skin-250ml-2-1654077647.jpg?dim=240x0&dpr=1.25&q=100"
-              alt="image"
+              alt="swiperimage"
               className="SwiperProductImage"
             />
           </div>
@@ -278,7 +342,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹772.00</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+          <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>
@@ -288,12 +360,12 @@ const CartSwiper = () => {
             <div className="offerDisplayWrapper">15% OFF</div>
             <img
               src="https://cdn01.pharmeasy.in/dam/products_otc/264359/d-protin-chocolate-diabetes-care-powder-500-g-2-1654077913.jpg?dim=100x0&dpr=1.25&q=100"
-              alt="image"
+              alt="Swiperimage"
               className="SwiperProductImage"
             />
           </div>
           <div className="CartItemTitleWrapper">
-            <p className="CartItemTitle">D-Protin Chocolate Diabetes Care</p>
+            <p className="CartItemTitle">D-Protin Chocolate..</p>
           </div>
           <div className="ItemDesWrapper">
             <p className="ItemDesTitle">500g Powder in Bottle</p>
@@ -307,7 +379,15 @@ const CartSwiper = () => {
             <p className="actualMRP">₹505.86</p>
           </div>
           <div className="addButtonWrapper">
-            <Button variant="outlined" className="AddButton">
+          <Button colorScheme='teal' variant='outline' className="AddButton"
+              fontSize= "16px"
+              mt="8px"
+              fontFamily= '"Open Sans", sans-serif'
+              fontWeight= "bold"
+              width= "120px"
+              height= "45px"
+              padding= "0 20px"
+            >
               Add
             </Button>
           </div>

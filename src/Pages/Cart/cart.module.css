@@ -7,12 +7,10 @@
 }
 
 .leftContainer {
-  /* height: 700px; */
   width: 39.3%;
 }
 
 .rightContainer {
-  /* height: 700px; */
   width: 30%;
 }
 
@@ -89,13 +87,14 @@
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
   width: 93.5%;
-  height: 65px;
+  height: 70px;
   padding: 7px 15px;
   background: #ffffff;
   display: flex;
   justify-content: flex-start;
   border: 1px solid lightgray;
   border-radius: 10px;
+  margin: 20px 0 0 0;
 }
 
 .notesul {
@@ -276,7 +275,7 @@
   width: 370px;
   height: 230px;
   background-color: #8573e1;
-  margin: 15px 0 15px 70px;
+  margin: 20px 0 15px 70px;
   padding: 10px;
   border-radius: 10px;
 }
@@ -399,7 +398,7 @@
   font-size: 16px;
   text-align: left;
   font-weight: 700;
-
+  margin: 50px 0 10px 0;
 }
 
 .description {
@@ -411,7 +410,6 @@
 }
 
 .seperator {
-  height: 0.5px;
   border: 0.5px solid #f2f2f2;
 }
 
@@ -443,7 +441,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .googlePlayButton {
@@ -469,7 +467,7 @@
 }
 
 .appleStoreButton {
-  width: 175px;
+  width: 180px;
   height: 56px;
   padding: 10px 15px;
   margin: 0 20px 0 0;
