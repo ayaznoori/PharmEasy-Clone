@@ -1,0 +1,491 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.leftContainer {
+  /* height: 700px; */
+  width: 39.3%;
+}
+
+.rightContainer {
+  /* height: 700px; */
+  width: 30%;
+}
+
+.cartItemsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 60px;
+  margin-left: 80px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.cartItemsNumber {
+  font-size: 35px;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  color: #4f585e;
+}
+
+.priceDes {
+  font-size: 14px;
+  color: #4f585e;
+  font-family: "Open Sans", sans-serif;
+}
+
+.swiperWrapper {
+  width: 580px;
+  /* height: 390px; */
+  margin-left: 80px;
+  /* 592 330 */
+}
+
+.trendingProductsWrapper {
+  width: 550px;
+  height: 55px;
+  padding: 20px 20px 20px 0px;
+  color: #4f585e;
+}
+
+.trendingTitle {
+  font-size: 15px;
+  color: #4f585e;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+}
+
+.additionalNotesWrapper {
+  width: 580px;
+  height: 400px;
+  margin-top: 40px;
+  margin-left: 80px;
+}
+
+.notesInputWrapper {
+  width: 100%;
+  height: 150px;
+}
+
+.notesTitle {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4f585e;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  margin-top: 6px;
+  height: 30px;
+}
+
+.inputBox {
+  color: #4f585e;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  width: 93.5%;
+  height: 65px;
+  padding: 7px 15px;
+  background: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.notesul {
+  text-align: left;
+  color: #4f585e;
+  margin: 0 0 5px;
+  padding: 0 0 0 15px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding-top: 16px;
+}
+
+.notesli {
+  padding: 5px 0 5px;
+}
+
+.anchorTag {
+  color: teal;
+}
+
+.offersSection {
+  margin-top: 75px;
+}
+
+.orderSummaryHeading {
+  font-size: 17px;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  padding: 25px 0 5px;
+  text-align: left;
+  margin-left: 70px;
+  font-weight: bold;
+  color: #4f585e;
+}
+
+.orderDetailsWrapper {
+  width: 360px;
+  /* height: 98px; */
+  margin-left: 70px;
+  margin-top: 8px;
+  
+}
+
+.cartValueWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+  height: 21px;
+  margin: 8px 0;
+}
+
+.CartValue {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  color: #4f585e;
+}
+
+.orderStrikedPrice {
+  text-decoration: line-through;
+  color: #8897a2;
+  margin-right: 5px;
+}
+
+.deliveryChargesWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+  height: 21px;
+  margin: 8px 0;
+}
+
+.deliveryCharges {
+  color: #4f585e;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+}
+
+.convenienceWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+  height: 21px;
+  margin: 8px 0;
+}
+
+.convenienceCharges {
+  color: #4f585e;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+}
+
+.toBePaidWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 360px;
+  height: 30px;
+  margin: 5px 0;
+}
+
+.toBePaid {
+  color: #4f585e;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.seperator {
+  border: 0.5px solid #f2f2f2;
+  height: 0px;
+}
+
+.savingsWrapper {
+  border: 2px dotted #3bb896;
+  width: 360px;
+  height: 89px;
+  margin: 15px 0 0;
+  padding: 10px;
+  margin-left: 70px;
+  background-color: #f2fff8;
+}
+
+.savingTitle {
+  width: 330px;
+  height: 21px;
+  font-family: "Open Sans", sans-serif;
+  color: #3bb896;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.currencySpan {
+  color: rgb(255, 197, 1);
+  border-radius: 45%;
+  font-size: 20px;
+}
+
+.uparrowSpan {
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.MRPDiscountWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 285px;
+  height: 18px;
+  margin: 10px 0 0;
+  padding: 0 15px 0 30px;
+}
+
+.MRPDiscount {
+  font-size: 13px;
+  color: #3bb896;
+}
+
+.otherChargesWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 285px;
+  height: 18px;
+  margin: 10px 0 0;
+  padding: 0 15px 0 30px;
+}
+
+.saveOfferWrapper {
+  width: 370px;
+  height: 230px;
+  background-color: #8573e1;
+  margin: 15px 0 15px 70px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.saveheading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 332px;
+  height: 72px;
+  text-align: left;
+  padding-left: 10px;
+  gap: 20px;
+}
+
+.saveheading > div {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+}
+
+.offerDescriptionWrapper {
+  width: 332px;
+  height: 135px;
+  padding: 0 15px;
+}
+
+.offerDescriptionUl {
+  margin-top: 0px;
+}
+
+.offerDescription {
+  width: 302px;
+  height: 25px;
+  padding: 5px;
+  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: white;
+  text-align: left;
+  padding-left: 0;
+  margin-left: 0px;
+}
+
+.moreBenefits {
+  font-size: 13px;
+  color: white;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 8px 0 5px 40px;
+}
+
+.assuranceWrapper {
+  width: 360px;
+  height: 62px;
+  margin: 5px 0 0 70px;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: #e9f9ff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.assureDes {
+  width: 297px;
+  height: 42px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  color: #4f585e;
+}
+
+.DeliveryPolicies {
+  width: 780px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.policy1 {
+  width: 256px;
+  height: 313px;
+  padding: 0 24px 50px;
+}
+
+.policy2 {
+  width: 256px;
+  height: 313px;
+  padding: 0 24px 50px;
+}
+
+.policy3 {
+  width: 256px;
+  height: 313px;
+  padding: 0 24px 50px;
+}
+
+.iconwrapper {
+  width: 208px;
+  height: 50px;
+  padding: 50px 0 10px;
+}
+
+.iconImage {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.totalProducts {
+  color: #4f585e;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  text-align: left;
+  font-weight: 700;
+
+}
+
+.description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: #8897a2;
+  font-weight: 500;
+  text-align: left;
+}
+
+.seperator {
+  height: 0.5px;
+  border: 0.5px solid #f2f2f2;
+}
+
+.appPromotionWrapper {
+  width: 900px;
+  height: 480px;
+  margin: 60px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.mobileImage {
+  width: 220px;
+  height: 430px;
+}
+
+.downloadTitle {
+  width: 390px;
+  height: 23px;
+  padding: 15px 0 0;
+  text-align: left;
+  color: #4f585e;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.AppDownloadButtonWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.googlePlayButton {
+  width: 175px;
+  height: 56px;
+  padding: 10px 15px;
+  margin: 0 20px 0 0;
+  background-color: #4f585e;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.googlePlayButton > img {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px 0 0;
+}
+
+.appleStoreButton {
+  width: 175px;
+  height: 56px;
+  padding: 10px 15px;
+  margin: 0 20px 0 0;
+  background-color: #4f585e;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  color: #FFFFFF;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.appleStoreButton > img {
+  width: 25px;
+  height: 28px;
+  margin: 0 10px 0 0;
+}
