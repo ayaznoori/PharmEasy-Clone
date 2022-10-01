@@ -31,26 +31,30 @@ const SingleProduct = () => {
   const [product, setProduct] = useState({})
   const { id } = useParams()
   let ratings = Math.floor((Math.random() * 10000) + 1)
- 
-  const [qty, setQty] = useState(0)
+  const [showImg, setShowImg] = useState("");
+  const [qty, setQty] = useState(0);
+  const [precart,setprecart]=useState(JSON.parse(localStorage.getItem('cartitem'))||[])
   const [cart, setCart] = useState([])
 
-  useEffect(() => {
-    axios
+  useEffect(async() => {
+    await axios
       .get(`http://localhost:8080/products/${id}`)
-      .then((res) => setProduct(res.data[0]))
-    setShowImg(product.img1);
-
+      .then((res) => { setShowImg(res.data[0].img1);setProduct(res.data[0])})
+      setQty(precart.length);
   }, []);
-  const [showImg, setShowImg] = useState(<img src ={product.img1} />);
+  
+ useEffect(()=>{
+        setQty(precart.length);
+ },[setprecart,qty,precart]);
 
-  const addCartHandler = ()=>{
-    setQty(qty = qty + 1)
-
-  }
+  const addCartHandler = (id)=>{
+    localStorage.setItem('cartitem',JSON.stringify([...precart,id]))
+    setprecart([...precart,id]);
+    
+    }
   return (
     <Box px="40px">
-      <Box marginTop="100px">
+      <Box marginTop="10px">
         <Flex className="content" justify="space-between">
           <div className={styles.leftInd}>
             {
@@ -74,7 +78,7 @@ const SingleProduct = () => {
                       cursor="pointer"
                     >
                       <div className={styles.figure}>
-                        <img className={styles.mainimage} src={product.img1} alt="" />
+                        <img className={styles.mainimage} src={showImg} alt="" />
                       </div>
                     </Flex>
                     <Flex
@@ -82,7 +86,7 @@ const SingleProduct = () => {
                       justify="space-between"
                     >
                       <Center
-                        onClick={() => {
+                        onMouseOver={() => {
                           setShowImg(product.img1);
                         }}
                         overflow="hidden"
@@ -103,7 +107,7 @@ const SingleProduct = () => {
                         />
                       </Center>
                       <Center
-                        onClick={() => {
+                        onMouseOver={() => {
                           setShowImg(product.img2);
                         }}
                         overflow="hidden"
@@ -124,7 +128,7 @@ const SingleProduct = () => {
                         />
                       </Center>
                       <Center
-                        onClick={() => {
+                        onMouseOver={() => {
                           setShowImg(product.img3);
                         }}
                         overflow="hidden"
@@ -247,7 +251,7 @@ const SingleProduct = () => {
                       w="9rem"
                       // transition="all 0.4s ease"
                       placeholder="Add to Cart"
-                      onClick ={addCartHandler}
+                      onClick ={()=>addCartHandler(product._id)}
                       // _hover={{ bg: "#0a5855", transition: "all 0.4s ease" }}
                     >
                       Add to Cart
@@ -276,7 +280,7 @@ const SingleProduct = () => {
           <Box className="right" w="25%" color="#4f585e" textAlign="left">
             <Box className="cartDetails" padding="10px 0">
               <Text fontSize="16" fontWeight="600" py="30px">
-                {qty} Item in Cart
+                {qty} Items in Cart
               </Text>
               <Link to="/cart">
                 <Button

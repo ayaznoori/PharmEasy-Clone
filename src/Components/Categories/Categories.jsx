@@ -8,8 +8,8 @@ const Categories = () => {
     const navigate = useNavigate();
 
     const handleClick = (heading) => {
-        heading = heading.toLowerCase();
-        navigate(`/category/${heading}`)
+        heading = heading.toLowerCase().split(" ").join("");
+        navigate(`/products/${heading}`)
     }
 
   return (
