@@ -4,9 +4,11 @@ const userModel = require('./Schema/userSchema');
 const nodemailer=require('nodemailer');
 const OtpModel = require('./Schema/otpSchema');
 const productModel = require('./Schema/products');
+const cors=require("cors");
 const app=express();
 
 app.use(express.json());
+app.use(cors());
 
 
 const transport=nodemailer.createTransport({
@@ -21,8 +23,9 @@ const transport=nodemailer.createTransport({
 //sending user otp in his email
 app.post('/sendOtp',async (req,res)=>{
   let emailid=req.body.email;
-  if(emailid==""){
-      res.send({"errormsg":"Email id is Maindatory"})
+  console.log(emailid)
+  if(emailid===""){
+      return res.send({"errormsg":"Email id is Maindatory"})
   }
   else{
   let otp=Math.floor(Math.random()*9000) + 1000;
@@ -38,7 +41,7 @@ app.post('/sendOtp',async (req,res)=>{
       }
       const otpsave= new OtpModel({otp:otp,email:emailid});
       otpsave.save();
-      res.status(200).send({'msg':'Otp send successfully'})})
+      res.status(200).send({'msg':'Otp send successfully',otp})})
   .catch(e=>res.send({"errormsg":e}))
 }
 });
@@ -47,6 +50,7 @@ app.post('/sendOtp',async (req,res)=>{
 // For verifying the otp
 app.post('/verify',async(req,res)=>{
   let check=req.body;
+  console.log(check)
   let verify= await OtpModel.find({email:check.email,otp:check.otp});    
   if(verify.length==1){
   res.status(200).send({"msg":"Verified Successfully"});
@@ -69,7 +73,7 @@ app.post('/signup',async (req,res)=>{
               user.save((err,result)=>
               {
                   if(!err){
-                      res.status(201).send(data)                                      //sending data to frondend
+                      res.status(201).send({message:"User saved successfully",details:data})                                      //sending data to frondend
                   }else
                   {
                      res.status(400).send({'errormsg':'something went wrong'})
