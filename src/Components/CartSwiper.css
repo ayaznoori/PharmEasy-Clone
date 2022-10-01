@@ -1,0 +1,135 @@
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    height: 315px;
+    width: 130px;
+    border-radius: 6px;
+  }
+
+
+  .swiperWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(228, 228, 228);
+    width: 120px;
+    height: 100px;
+    margin: 0 0 10px;
+    padding: 20px;
+    margin: auto;
+    border-radius: 6px;
+    cursor:grab;
+  }
+
+  .offerDisplayWrapper {
+    width: 65px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    background-image: url("https://assets.pharmeasy.in/web-assets/dist/6aa9e076.png") ;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px 0 0 0;
+
+    color: #FFF;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .SwiperProductImage {
+    width: 96px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .CartItemTitleWrapper {
+    text-align: left;
+    margin: 0px 0 3px;
+    padding-left: 15px;
+    width: 160px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-overflow: hidden;
+    padding-top: 3px;
+  }
+
+  .CartItemTitle {
+    font-weight: 600;
+    color: #4f585e;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .ItemDesWrapper {
+    width: 170px;
+    height: 17px;
+    margin: 0 0 8px;
+    text-align: left;
+  }
+
+  .ItemDesTitle {
+    font-size: 14px;
+    color: #4f585e;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+    margin-top: 1px;
+    padding-left: 15px;
+  }
+
+  .strikedMRPWraper {
+    height: 20px;
+    width: 140px;
+    padding-left: 15px;
+    margin: 0 0 3px;
+  }
+
+  .strikedMRP {
+    font-size: 14px;
+    color: #8897a2;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    text-decoration: line-through;
+    margin-top: -1px;
+    text-align: left;
+  }
+
+  .strikedMRPSpan {
+    font-size: 14px;
+    color: #8897a2;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    text-decoration: line-through;
+    text-align: left;
+    margin-top: -1px;
+  }
+
+  .actualMRPWrapper {
+    width: 140px;
+    height: 20px;
+    padding-left: 15px;
+  }
+
+  .actualMRP {
+    text-align: left;
+    color: #4f585e;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: -1px;
+  }
+
+  .addButtonWrapper {
+    margin: 6px 0 0 0;
+  }
+  

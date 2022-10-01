@@ -1,0 +1,180 @@
+.cartItemsDisplay {
+    border: 1px solid lightgray;
+    margin-left: 80px;
+    height: 230px;
+    width: 570px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-top: 10px;
+    margin-bottom: 25px;
+  }
+  
+  .leftCartSection {
+      width: 70px;
+  }
+  
+  .imageWrapper {
+      width: 60px;
+      height: 70px;
+      margin: 0 5px 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 12px;
+  }
+  
+  .cartItemImage {
+      width: 22px;
+      height: 70px;
+  }
+  
+  .rightCartSection {
+      width: 480px;
+  }
+  
+  .itemTitleWrapper {
+      display: flex;
+      justify-content: space-around;
+  }
+  
+  .cartItemsTitle {
+      text-align: left;
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      padding: 0 0 5px;
+      color: #4f585e;
+      line-height: 22px;
+  }
+  
+  .deleteButtonWrapper {
+      width: 30px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 10px;
+      padding-top: 7px;
+  }
+  
+  .deleteButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      margin: 0 0 0 5px;
+      /* padding: 5px 0 5px 5px; */
+      border: none;
+      background: transparent;
+      cursor: pointer;
+  }
+  
+  .deleteImage {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+  }
+  
+  .producerCompany {
+      font-size: 14px;
+      color: #8897a2;
+      text-align: left;
+      font-family: "Open Sans", sans-serif;
+      margin-top: -5px;
+  }
+  
+  .itemQuantityWrapper {
+      margin: 10px 0 0;
+      text-align: left;
+  
+  }
+  
+  .itemQuantity {
+      font-size: 17px;
+      font-family: "Open Sans", sans-serif;
+      color: #4f585e;
+      font-weight: 600;
+  }
+  
+  .priceAndQuantityWrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+  }
+  
+  .quantityWrapper {
+      width: 140px;
+      height: 45px;
+  }
+  
+  .selectQuantity {
+      width: 100px;
+      height: 45px;
+      padding: 10px;
+      font-size: 16px;
+      border:  1px solid gray;
+      border-radius: 5px;
+      font-weight: 700;
+      color: #4f585e;
+      font-family: "Open Sans", sans-serif;
+      display: flex;
+      justify-content: flex-start;
+  }
+  
+  .priceWrapper {
+      width: 130px;
+      height: 45px;
+  }
+  
+  .stirkedPriceWrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 17px;
+  }
+  
+  .strikedPrice {
+      text-decoration: line-through;
+      color: #4f585e;
+      font-size: 13px;
+      font-family: "Open Sans", sans-serif;
+  }
+  
+  .offer {
+      font-size: 13px;
+      color: #f98b8d;
+      font-family: "Open Sans", sans-serif;
+  }
+  
+  .actualPrice {
+      font-size: 16px;
+      font-weight: bold;
+      color: #4f585e;
+      padding-top: 4px;
+      font-family: "Open Sans", sans-serif;
+  }
+  
+  .arrivalDate {
+      height: 29px;
+      width: 330px;
+      margin-top: 8px;
+      text-align: left;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+  }
+  
+  .span1 {
+      font-weight: 300;
+      color: #4f585e;
+      font-family: "Open Sans", sans-serif;
+  }
+  
+  .span2 {
+      font-weight: 500;
+      color: #4f585e;
+      font-family: "Open Sans", sans-serif;
+  }

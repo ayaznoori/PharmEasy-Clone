@@ -36,8 +36,8 @@ const SingleProduct = () => {
   const [precart,setprecart]=useState(JSON.parse(localStorage.getItem('cartitem'))||[])
   const [cart, setCart] = useState([])
 
-  useEffect(async() => {
-    await axios
+  useEffect(() => {
+     axios
       .get(`http://localhost:8080/products/${id}`)
       .then((res) => { setShowImg(res.data[0].img1);setProduct(res.data[0])})
       setQty(precart.length);
@@ -47,9 +47,9 @@ const SingleProduct = () => {
         setQty(precart.length);
  },[setprecart,qty,precart]);
 
-  const addCartHandler = (id)=>{
-    localStorage.setItem('cartitem',JSON.stringify([...precart,id]))
-    setprecart([...precart,id]);
+  const addCartHandler = (product)=>{
+    localStorage.setItem('cartitem',JSON.stringify([...precart,{...product,qty:1}]));
+    setprecart([...precart,{...product,qty:1}]);
     
     }
   return (
@@ -251,7 +251,7 @@ const SingleProduct = () => {
                       w="9rem"
                       // transition="all 0.4s ease"
                       placeholder="Add to Cart"
-                      onClick ={()=>addCartHandler(product._id)}
+                      onClick ={()=>addCartHandler(product)}
                       // _hover={{ bg: "#0a5855", transition: "all 0.4s ease" }}
                     >
                       Add to Cart

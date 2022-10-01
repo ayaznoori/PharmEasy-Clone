@@ -1,0 +1,23 @@
+.assuranceWrapper {
+    width: 380px;
+    height: 80px;
+    margin: 5px 0 0 0px;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #e9f9ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .assureDes {
+    width: 330px;
+    height: 70px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+    text-align: left;
+    color: #4f585e;
+    margin: auto
+  }
