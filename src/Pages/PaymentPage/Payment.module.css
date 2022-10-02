@@ -1,0 +1,317 @@
+.mainContainer {
+  border: 2px solid black;
+  width: 1024px;
+  /* height: 900px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.leftContainer {
+  border: 1px solid red;
+  width: 592px;
+  height: 1150px;
+}
+
+.offerTitleWrapper {
+  border: 1px solid black;
+  width: 592px;
+  height: 52px;
+  padding: 0 0 20px;
+  color: #4f585e;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.offerTitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.paytmContainer {
+  width: 592px;
+  height: 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paytmIconWrapper {
+  width: 40px;
+  height: 40px;
+  margin: 0 20px 0 5px;
+}
+
+.paytmIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.paytmIconn {
+    width: 40px;
+    height: 12px;
+  }
+
+.paytmOffersWrapper {
+  height: 100%;
+  width: 88%;
+}
+
+.paytmOfferHeadingWrapper1 {
+  width: 495px;
+  height: 30px;
+  margin-top: 10px;
+  padding: 0 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.paytmHeading1 {
+  font-size: 16px;
+  color: #4f585e;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+}
+
+.paytmOfferDescription {
+  font-size: 13px;
+  color: #8897a2;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  padding: 0 15px 0 0;
+  letter-spacing: 0.5px;
+  margin-top: 1px;
+}
+
+.offerSeperator {
+  /* height: 0.5px; */
+  margin-bottom: 10px;
+  border: 0.5px solid #f2f2f2;
+}
+
+.otherPaymentOptions {
+  font-size: 26px;
+  color: #4f585e;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+}
+
+.upiPaymentWrapper {
+  width: 592px;
+  height: 91px;
+  margin: 0 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.upiImage {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+.ImageWrapper {
+  height: 100%;
+  width: 85%;
+}
+
+.upiHeadingWrapper {
+  width: 490px;
+  height: 30px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upiHeadingWrapper > p {
+  font-size: 16px;
+  color: #4f585e;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+}
+
+.optionsImageWrapper {
+  width: 80%;
+  height: 80px;
+  border: 1px solid blue;
+}
+
+.imageCollectionWrapper {
+  width: 500px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-left: 5px;
+}
+
+.imageCollection {
+  width: 50px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.morespan {
+  font-size: 14px;
+  color: #4f585e;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  margin-left: 8px;
+}
+
+.cartDetailsWrapper {
+  width: 592px;
+  height: 163px;
+  margin: 0 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.creditCardImage {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}
+
+.cardWrapper {
+  height: 140px;
+  width: 85%;
+}
+
+.detailsWrapper {
+  width: 458px;
+  height: 100px;
+}
+
+.detailsWrapper > p {
+  font-size: 13px;
+  color: #8897a2;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  line-height: 22px;
+}
+
+.CreditimageWrapper {
+  width: 500px;
+  height: 40px;
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.creditImage {
+  width: 40px;
+  height: 40px;
+}
+
+.netBankingWrapper {
+  width: 592px;
+  height: 68px;
+  margin: 0 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.netbankingImage {
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.netbankingDetailsWrapper {
+  width: 86%;
+  height: 100%;
+}
+
+.netbankingFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bankHeading {
+  font-size: 16px;
+  color: #4f585e;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+}
+
+.banksCount {
+  font-size: 13px;
+  color: #8897a2;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  margin-top: -8px;
+}
+
+/* **** */
+
+.CodWrapper {
+  width: 592px;
+  height: 80px;
+  margin: 0 0 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.CodImage {
+  width: 40px;
+  height: 40px;
+  margin: 10px 15px;
+
+}
+
+.CodDetailsWrapper {
+  width: 86%;
+  height: 100%;
+}
+
+.CodFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CodHeading {
+  font-size: 16px;
+  color: #4f585e;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+}
+
+.checkBox {
+  padding: 15px;
+  margin-right: 13px;
+}
+
+.CodDetails {
+  font-size: 13px;
+  color: #8897a2;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+  margin-top: -8px;
+  width: 458px;
+}
+
+.rightContainer {
+  border: 1px solid black;
+  width: 352px;
+  height: 900px;
+}

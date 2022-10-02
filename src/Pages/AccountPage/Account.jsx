@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from "./account.module.css"
+import styles from "./Account.module.css"
 import { BsFillHandbagFill } from "react-icons/bs"
 import { HiFolder } from "react-icons/hi"
 import { BsFillPersonFill } from "react-icons/bs"

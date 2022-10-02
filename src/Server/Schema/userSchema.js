@@ -1,9 +1,9 @@
 const mongoose=require('mongoose');
 
 const userSchema=new mongoose.Schema({
+    email:String,
     username:String,
-    number:{type:Number,unique:true},
-    email:{type: String, unique:true},
+    number:Number,
     password:String
 });
 

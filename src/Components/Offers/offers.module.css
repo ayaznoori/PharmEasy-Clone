@@ -21,3 +21,19 @@
   font-weight: 600;
   color: rgb(251, 98, 98);
 }
+.backColor {
+  max-width: 1440px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: radial-gradient(
+      150px 150px at 95% 0%,
+      rgba(253, 186, 43, 0.3) 0%,
+      rgba(253, 186, 43, 0) 100%
+    ),
+    radial-gradient(
+      150px 150px at 5% 0%,
+      rgba(120, 213, 242, 0.3) 0%,
+      rgba(253, 186, 43, 0) 100%
+    );
+}
