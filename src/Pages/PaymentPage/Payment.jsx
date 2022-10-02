@@ -47,13 +47,8 @@ const Payment = () => {
   const [checked, setChecked] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const Navigate = useNavigate()
-  setTimeout(() => {
-    onClose();
-    localStorage.removeItem("cartvalue");
-    localStorage.removeItem("cartitem");
-    
-    Navigate("/")
-  }, 5000)
+
+  
 
   const handleChange = (e) => {
     if (e.target.type === "checkbox") {
@@ -66,7 +61,16 @@ const Payment = () => {
     setChecked(!checked);
   };
 
-  let randomNumber = Math.floor(Math.random() * 100000);
+  const handlebuy=()=>{
+      onOpen();
+      setTimeout(() => {
+        onClose();
+        localStorage.removeItem("cartvalue");
+        localStorage.removeItem("cartitem");
+        Navigate("/")
+      }, 5000)
+  }
+
 
   let prices = JSON.parse(localStorage.getItem("cartvalue"));
 
@@ -291,7 +295,8 @@ const Payment = () => {
                   justify="flex-start"
                   ml="40px"
                   p="14px 16px"
-                  onClick={onOpen}
+                  onClick={handlebuy}
+
                 >
                   Place Order
                 </Button>

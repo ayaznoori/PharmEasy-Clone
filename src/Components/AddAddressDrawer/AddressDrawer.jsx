@@ -24,7 +24,7 @@ const AddressDrawer = () => {
   const navigate=useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
-  const [address, setAddress] = useState({});
+  const [address, setAddress] = useState(JSON.parse(localStorage.getItem('address'))||{});
   const handleChange = (e) => {
     const {name, value} = e.target;
     setAddress({
@@ -40,7 +40,7 @@ const AddressDrawer = () => {
 
   return (
     <>
-     {!address?<Button
+     {!address.bill?<Button
         variant="solid"
         //   className={styles.addAddressButton}
         width="354px"
