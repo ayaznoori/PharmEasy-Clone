@@ -23,7 +23,6 @@ const transport=nodemailer.createTransport({
 //sending user otp in his email
 app.post('/sendOtp',async (req,res)=>{
   let emailid=req.body.email;
-  console.log(emailid)
   if(emailid===""){
       return res.send({"errormsg":"Email id is Maindatory"})
   }
@@ -50,7 +49,6 @@ app.post('/sendOtp',async (req,res)=>{
 // For verifying the otp
 app.post('/verify',async(req,res)=>{
   let check=req.body;
-  console.log(check)
   let verify= await OtpModel.find({email:check.email,otp:check.otp});    
   if(verify.length==1){
   res.status(200).send({"msg":"Verified Successfully"});
@@ -64,8 +62,8 @@ app.post('/verify',async(req,res)=>{
 app.post('/signup',async (req,res)=>{
   let data=req.body;
   if(data.email){
-         const check= await userModel.find({email:data.email});                                                     // checking that user already present
-         if(check.length>0){
+         const check= await userModel.find({email:data.email});                                                    // checking that user already present
+     try{    if(check.length>0){
                res.status(200).send(check)      // return already present if present in db
           } 
         else{
@@ -73,15 +71,19 @@ app.post('/signup',async (req,res)=>{
               user.save((err,result)=>
               {
                   if(!err){
-                      res.status(201).send({message:"User saved successfully",details:data})                                      //sending data to frondend
+                      res.status(201).send([user])                                      //sending data to frondend
                   }else
                   {
+                    console.log(err)
                      res.status(400).send({'errormsg':'something went wrong'})
                   }
               });
+        }}
+        catch(err){
+          console.log("err",err)
         }
          
-  }
+      }
   else{
       res.status(400).send({'errormsg':'all field mandetory'});                       //error if some feild is blank
   }

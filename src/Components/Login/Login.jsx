@@ -25,6 +25,8 @@ import {
   Box,
 } from "@chakra-ui/react";
 import axios from "axios";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -60,23 +62,35 @@ const Login = () => {
       email: email.email,
       otp: otp,
     });
-    if ((res.data.msg = "Verified Successfully")) {
+    console.log("before res",res)
+    if ((res.data.msg = "Verified successfully")) {
       console.log(res);
       let signup = await axios.post("http://localhost:8080/signup", {
-        email: email.email,
-        otp: otp,
+        email: email.email
       });
       console.log(signup);
-      setHello("Hello User");
+      if(signup.data[0].username!=undefined)
+      setHello(`Hello ${signup.data[0].username}`)
+      else
+      setHello(`Hello user`);
+      localStorage.setItem('userdetail',JSON.stringify(signup.data[0]));
       onClose();
       setShow(true);
       setChangeComp(false);
     }
   };
-
+ useEffect(()=>{
+  let data=JSON.parse(localStorage.getItem('userdetail'))||{username:'Log in'};
+  setHello(`Hello ${data.username||'user'}`);
+  if(data.username!='Log in'){
+    setShow(true);
+    setChangeComp(false);
+  }
+ },[window.location.reload])
   const logout = () => {
     setChangeComp(true);
     setHello("Hello, Log in")
+    localStorage.removeItem('userdetail')
   }
   return (
     <div>
@@ -260,7 +274,7 @@ const Login = () => {
                 >
                   Medical Records
                 </Button>
-                <Button
+              <Link to='/account'> <Button
                   colorScheme="gray"
                   variant="ghost"
                   width={"100%"}
@@ -268,6 +282,7 @@ const Login = () => {
                 >
                   My Profile
                 </Button>
+                </Link>
                 <Button
                   colorScheme="gray"
                   variant="ghost"

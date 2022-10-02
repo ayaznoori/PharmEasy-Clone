@@ -66,7 +66,7 @@ const Navbar = () => {
             </div>
             <div className={styles.links2Icons}>
               <BsCart2 style={{ fontSize: "20px", marginRight: "10px" }} />
-              <a href="#cart" style={{ fontSize: "14px", fontWeight: "500" }}>
+              <a href="/cart" style={{ fontSize: "14px", fontWeight: "500" }}>
                 Cart
               </a>
             </div>

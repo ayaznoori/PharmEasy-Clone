@@ -1,0 +1,13 @@
+.container{
+    border: 1px solid green;
+    margin:0;
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+.centerdiv{
+   width: 800px;
+   height: 400px;
+   border: 1px solid red;
+}
