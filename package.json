@@ -29,6 +29,7 @@
     "swiper": "^8.4.2",
     "react-slick": "^0.29.0",
     "styled-components": "^5.3.6",
+    "swiper": "^8.4.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
