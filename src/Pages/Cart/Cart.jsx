@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CartItem from "../../Components/CartItem";
 import styles from "./cart.module.css";
 import CartSwiper from "../../Components/CartSwiper.jsx";
-import { Button } from '@chakra-ui/react'
+import { Button, Flex } from "@chakra-ui/react";
 import ChevronRight from "@mui/icons-material/ChevronRight";
 import Box from "@mui/material/Box";
 import { HiCurrencyRupee } from "react-icons/hi";
@@ -12,28 +12,70 @@ import AddressDrawer from "../../Components/AddAddressDrawer/AddressDrawer";
 import { useEffect } from "react";
 
 const Cart = () => {
-  const [data,setdata]=useState(JSON.parse(localStorage.getItem('cartitem'))||[]);
-  useEffect(()=>{
-   
-  },[setdata]);
-  
+  const [data, setdata] = useState(
+    JSON.parse(localStorage.getItem("cartitem")) || []
+  );
+
+  const [localdata,setlocaldata]=useState({sprice:data.length == 0
+    ? 0
+    : data.length == 1
+    ? (data[0].price * data[0].qty).toFixed(2)
+    : data
+        .reduce((a, b) => a.price * a.qty + b.price * b.qty)
+        .toFixed(2),price:data.length == 0
+        ? 0
+        : data.length == 1
+        ? Number(data[0].offprice * data[0].qty).toFixed(2)
+        : data
+            .reduce(
+              (a, b) => a.offprice * a.qty + b.offprice * b.qty
+            )
+            .toFixed(2)})
+  useEffect(() => {
+              localStorage.setItem('cartvalue',JSON.stringify({sprice:data.length == 0
+                ? 0
+                : data.length == 1
+                ? (data[0].price * data[0].qty).toFixed(2)
+                : data
+                    .reduce((a, b) => a.price * a.qty + b.price * b.qty)
+                    .toFixed(2),price:data.length == 0
+                    ? 0
+                    : data.length == 1
+                    ? Number(data[0].offprice * data[0].qty).toFixed(2)
+                    : data
+                        .reduce(
+                          (a, b) => a.offprice * a.qty + b.offprice * b.qty
+                        )
+                        .toFixed(2)}))
+
+  }, [setdata,data]);
+  const [address,setaddress]=useState(JSON.parse(localStorage.getItem("address"))||null)
+
+ 
+
+  useEffect(() => {
+    setaddress(JSON.parse(localStorage.getItem("address")));
+  }, [] )
+
   return (
     <>
       <div className={styles.container}>
         <div className={styles.leftContainer}>
           <div className={styles.cartItemsWrapper}>
-            <h1 className={styles.cartItemsNumber}>{data.length} Items in cart</h1>
+            <h1 className={styles.cartItemsNumber}>
+              {data.length} Items in cart
+            </h1>
             <p className={styles.priceDes}>Prices are indicative</p>
           </div>
-             
-          {data.map(ele=>
-                <CartItem key={ele._id} data={ele} setdata={setdata}/> 
-          )}
+
+          {data.map((ele) => (
+            <CartItem key={ele._id} data={ele} setdata={setdata} />
+          ))}
           <div className={styles.swiperWrapper}>
             <div className={styles.trendingProductsWrapper}>
               <p className={styles.trendingTitle}>Trending Products Near You</p>
             </div>
-            <CartSwiper data={data}/>
+            <CartSwiper data={data} />
           </div>
           <div className={styles.additionalNotesWrapper}>
             <div className={styles.notesInputWrapper}>
@@ -72,17 +114,50 @@ const Cart = () => {
         </div>
         <div className={styles.rightContainer}>
           <div className={styles.offersSection}>
+            {address ? 
+              <Box
+                width="360px"
+                backgroundColor="azure"
+                height="80px"
+                color="#10847e"
+                border="1px solid #f1f1f1"
+                fontWeight="400"
+                fontSize="14px"
+                fontFamily='"Open Sans", sans-serif'
+                ml="75px"
+                mb="30px"
+                p="10px"
+                borderRadius="8px"
+                display="flex"
+                justify="space-between"
+                textAlign="left"
+              >
+                {address.bill}, {address.buildingName}, {address.streetName},{" "}
+                {address.pincode}
+                <Button
+                  bg="transparent"
+                  position="relative"
+                  top="-20%"
+                  mt="0"
+                  ml="20px"
+                  color="purple"
+                  _hover={{bg: "transparent"}}
+                >
+                  Change
+                </Button>
+              </Box>
+                : null }
             <Button
               variant="outlined"
               className={styles.applyCouponButton}
               rightIcon={<ChevronRight />}
-                width= "354px"
-                height= "45px"
-                color= "#10847e"
-                border= "1px solid #10847e"
-                fontWeight= "700"
-                fontSize= "16px"
-                fontFamily= '"Open Sans", sans-serif'
+              width="354px"
+              height="45px"
+              color="#10847e"
+              border="1px solid #10847e"
+              fontWeight="700"
+              fontSize="16px"
+              fontFamily='"Open Sans", sans-serif'
             >
               Apply Coupon / View Offers
             </Button>
@@ -122,8 +197,26 @@ const Cart = () => {
               <div className={styles.cartValueWrapper}>
                 <p className={styles.CartValue}>Cart Value</p>
                 <p className={styles.CartValue}>
-                  <span className={styles.orderStrikedPrice}>₹{data.length==0?0:data.length==1?((data[0].price)*data[0].qty).toFixed(2):(data.reduce((a,b)=>(a.price*a.qty)+(b.price*b.qty))).toFixed(2)} </span>{" "}
-                  ₹{data.length==0?0:data.length==1?(Number(data[0].offprice*data[0].qty)).toFixed(2):(data.reduce((a,b)=>(a.offprice*a.qty)+(b.offprice*b.qty))).toFixed(2)}
+                  <span className={styles.orderStrikedPrice}>
+                    ₹
+                    {data.length == 0
+                      ? 0
+                      : data.length == 1
+                      ? (data[0].price * data[0].qty).toFixed(2)
+                      : data
+                          .reduce((a, b) => a.price * a.qty + b.price * b.qty)
+                          .toFixed(2)}{" "}
+                  </span>{" "}
+                  ₹
+                  {data.length == 0
+                    ? 0
+                    : data.length == 1
+                    ? Number(data[0].offprice * data[0].qty).toFixed(2)
+                    : data
+                        .reduce(
+                          (a, b) => a.offprice * a.qty + b.offprice * b.qty
+                        )
+                        .toFixed(2)}
                 </p>
               </div>
               <div className={styles.deliveryChargesWrapper}>
@@ -139,7 +232,20 @@ const Cart = () => {
               <hr className={styles.seperator} />
               <div className={styles.toBePaidWrapper}>
                 <p className={styles.toBePaid}>Amount to be paid</p>
-                <p className={styles.toBePaid}>₹{data.length==0?0:data.length==1?(Number(data[0].offprice*data[0].qty)+49).toFixed(2):(Number(data.reduce((a,b)=>(a.offprice*a.qty)+(b.offprice*b.qty)))+49).toFixed(2)}</p>
+                <p className={styles.toBePaid}>
+                  ₹
+                  {data.length == 0
+                    ? 0
+                    : data.length == 1
+                    ? (Number(data[0].offprice * data[0].qty) + 49).toFixed(2)
+                    : (
+                        Number(
+                          data.reduce(
+                            (a, b) => a.offprice * a.qty + b.offprice * b.qty
+                          )
+                        ) + 49
+                      ).toFixed(2)}
+                </p>
               </div>
               <hr className={styles.seperator} />
             </div>
@@ -148,7 +254,25 @@ const Cart = () => {
                 <span className={styles.currencySpan}>
                   <HiCurrencyRupee />
                 </span>{" "}
-                Total savings of <b>₹{(data.length==0?0:data.length==1?Number(((data[0].price)*data[0].qty).toFixed(2))-(Number(data[0].offprice*data[0].qty)).toFixed(2):(data.reduce((a,b)=>(a.price*a.qty)+(b.price*b.qty))).toFixed(2)-(data.reduce((a,b)=>(a.offprice*a.qty)+(b.offprice*b.qty))).toFixed(2)).toFixed(2)}</b> on this order
+                Total savings of{" "}
+                <b>
+                  ₹
+                  {(data.length == 0
+                    ? 0
+                    : data.length == 1
+                    ? Number((data[0].price * data[0].qty).toFixed(2)) -
+                      Number(data[0].offprice * data[0].qty).toFixed(2)
+                    : data
+                        .reduce((a, b) => a.price * a.qty + b.price * b.qty)
+                        .toFixed(2) -
+                      data
+                        .reduce(
+                          (a, b) => a.offprice * a.qty + b.offprice * b.qty
+                        )
+                        .toFixed(2)
+                  ).toFixed(2)}
+                </b>{" "}
+                on this order
                 <span className={styles.uparrowSpan}>
                   <MdKeyboardArrowUp />
                 </span>
@@ -263,7 +387,10 @@ const Cart = () => {
         <div className={styles.downloadWrapper}>
           <div className={styles.downloadTitle}>Download the App For Free</div>
           <div className={styles.AppDownloadButtonWrapper}>
-            <a href="https://play.google.com/store/apps/details?id=com.phonegap.rxpal&hl=en_IN&gl=US&utm_source=web&utm_medium=footer" target="_blank">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.phonegap.rxpal&hl=en_IN&gl=US&utm_source=web&utm_medium=footer"
+              target="_blank"
+            >
               <button className={styles.googlePlayButton}>
                 <img
                   src="https://assets.pharmeasy.in/web-assets/dist/3380aedc.png"
@@ -272,7 +399,10 @@ const Cart = () => {
                 <span>Google Play</span>
               </button>
             </a>
-            <a href="https://apps.apple.com/in/app/pharmeasy-healthcare-app/id982432643" target="_blank">
+            <a
+              href="https://apps.apple.com/in/app/pharmeasy-healthcare-app/id982432643"
+              target="_blank"
+            >
               <button className={styles.appleStoreButton}>
                 <img
                   src="https://assets.pharmeasy.in/web-assets/dist/9bf5c576.png"

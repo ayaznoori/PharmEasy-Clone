@@ -53,9 +53,9 @@
 
   .CartItemTitleWrapper {
     text-align: left;
-    margin: 0px 0 3px;
+    margin: 0px 10px 3px;
     padding-left: 15px;
-    width: 160px;
+    width: 170px;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -65,17 +65,18 @@
   }
 
   .CartItemTitle {
-    font-weight: 600;
+    font-weight: 700;
     color: #4f585e;
     font-family: "Open Sans", sans-serif;
     font-size: 16px;
     cursor: pointer;
+    width: 300px;
   }
 
   .ItemDesWrapper {
     width: 170px;
     height: 17px;
-    margin: 0 0 8px;
+    margin: 0 10px 8px;
     text-align: left;
   }
 
@@ -92,11 +93,11 @@
     height: 20px;
     width: 140px;
     padding-left: 15px;
-    margin: 0 0 3px;
+    margin: 0 10px 3px;
   }
 
   .strikedMRP {
-    font-size: 14px;
+    font-size: 13px;
     color: #8897a2;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
@@ -106,19 +107,21 @@
   }
 
   .strikedMRPSpan {
-    font-size: 14px;
+    font-size: 13px;
     color: #8897a2;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     text-decoration: line-through;
     text-align: left;
     margin-top: -1px;
+    margin-left: 5px;
   }
 
   .actualMRPWrapper {
     width: 140px;
     height: 20px;
     padding-left: 15px;
+    margin-left: 10px;
   }
 
   .actualMRP {

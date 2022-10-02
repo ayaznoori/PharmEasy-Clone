@@ -214,7 +214,7 @@ const CartSwiper = () => {
           </div>
           <div className="CartItemTitleWrapper">
             <p className="CartItemTitle">
-              Accu-chek Instant Glucometer Test Strips
+              Accu-chek Instant Glucometer
             </p>
           </div>
           <div className="ItemDesWrapper">
@@ -328,7 +328,7 @@ const CartSwiper = () => {
             />
           </div>
           <div className="CartItemTitleWrapper">
-            <p className="CartItemTitle">Cetaphil Moisturising Lotion</p>
+            <p className="CartItemTitle">Cetaphil Moisturise Lotion</p>
           </div>
           <div className="ItemDesWrapper">
             <p className="ItemDesTitle">250ml Lotion in Bottle</p>
