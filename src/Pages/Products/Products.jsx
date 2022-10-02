@@ -67,6 +67,8 @@ const Products = () => {
     setData(sortData);
   }, [change]);
 
+  
+
   return (
     <div>
       <div className={styles.container}>

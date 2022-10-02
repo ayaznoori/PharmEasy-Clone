@@ -8,7 +8,6 @@ import Payment from './Pages/PaymentPage/Payment';
 import Footer from './Components/Footer/Footer';
 import Home from './Pages/Homepage/Home';
 import SingleProduct from './Pages/Products/Product';
-import DummyProducts from './Pages/Products/DummyProducts';
 import Navbar from './Components/Navbar/Navbar';
 import Products from './Pages/Products/Products';
 function App() {

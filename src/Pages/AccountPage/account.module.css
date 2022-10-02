@@ -1,10 +1,10 @@
 .maindiv {
     width: 70%;
-    height: 2000px;
     margin: auto;
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
+    text-align: left;
 }
 
 .leftdiv {
@@ -67,6 +67,8 @@
     height: 38px;
     width: 100%;
     border-radius: 3px;
+    padding-left: 5px;
+    padding: 5px;
 }
 
 .star {
@@ -88,7 +90,7 @@
 .subheading{
     font-size:16px;
     font-weight:bold;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 .accountIcon{
     font-size: 35px;

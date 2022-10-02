@@ -27,8 +27,9 @@ import {
 import axios from "axios";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const navigate =useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
   const [email, setEmail] = useState({ email: "" });
@@ -90,7 +91,8 @@ const Login = () => {
   const logout = () => {
     setChangeComp(true);
     setHello("Hello, Log in")
-    localStorage.removeItem('userdetail')
+    localStorage.removeItem('userdetail');
+    navigate('/')
   }
   return (
     <div>
