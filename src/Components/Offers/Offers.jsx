@@ -18,6 +18,7 @@ import { GoNote } from "react-icons/go";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { BiSearchAlt } from "react-icons/bi";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Offers = () => {
   const [query, setQuery] = useState("");
@@ -25,7 +26,7 @@ const Offers = () => {
   const [data, setData] = useState([]);
 
   const handleChange = async (e) => {
-    if(e.target.value===""){
+    if (e.target.value === "") {
       return setShow(false);
     }
     setQuery(e.target.value);
@@ -35,8 +36,8 @@ const Offers = () => {
     );
     setData(res.data);
   };
-  
-  const element=document.querySelector("#box");
+
+  const element = document.querySelector("#box");
   console.log(element);
 
   // if()
@@ -98,62 +99,63 @@ const Offers = () => {
             // border:"1px solid #EEF4FF"
           }}
         >
-        <Box
-          position={"absolute"}
-          height={"425px"}
-          border="1px solid #EEF4FF"
-          width={"60%"}
-          margin="auto"
-          bg={"white"}
-          marginLeft="290px"
-          overflowY="scroll"
-          borderTop={"none"}
-          id="#box"
-        >
-          <VStack>
-            <Box
-              paddingLeft={"10px"}
-              width={"100%"}
-              backgroundColor="#EEF4FF"
-              textAlign={"left"}
-              fontSize="12px"
-              height={"40px"}
-              display="flex"
-              alignItems="center"
-              color="#4F585E"
-            >
-              Showing results for {query}
-            </Box>
-            {data.map((el) => (
-              <div
-                key={el._id}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "100%",
-                  textAlign: "left",
-                  paddingLeft: "10px",
-                }}
+          <Box
+            position={"absolute"}
+            height={"425px"}
+            border="1px solid #EEF4FF"
+            width={"60%"}
+            margin="auto"
+            bg={"white"}
+            marginLeft="290px"
+            overflowY="scroll"
+            borderTop={"none"}
+            id="#box"
+          >
+            <VStack>
+              <Box
+                paddingLeft={"10px"}
+                width={"100%"}
+                backgroundColor="#EEF4FF"
+                textAlign={"left"}
+                fontSize="12px"
+                height={"40px"}
+                display="flex"
+                alignItems="center"
+                color="#4F585E"
               >
-                <Heading
-                  noOfLines={"1"}
-                  color="#30363C"
-                  fontSize="14px"
-                  fontWeight={"500"}
-                  height="20px"
+                Showing results for {query}
+              </Box>
+              {data.map((el) => (
+                <div
+                  key={el._id}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "100%",
+                    textAlign: "left",
+                    paddingLeft: "10px",
+                  }}
                 >
-                  {el.name}
-                </Heading>
-                <Text color={"#6E787E"} fontSize={"12px"}>
-                  {el.storename}
-                </Text>
-              </div>
-            ))}
-          </VStack>
-        </Box>
-      </div>
-      ) :  
-      null}
+                  <Link to={`/product/${el._id}`}>
+                    <Heading
+                      noOfLines={"1"}
+                      color="#30363C"
+                      fontSize="14px"
+                      fontWeight={"500"}
+                      height="20px"
+                    >
+                      {el.name}
+                    </Heading>
+                    <Text color={"#6E787E"} fontSize={"12px"}>
+                      {el.storename}
+                    </Text>
+                  </Link>
+                </div>
+              ))}
+            </VStack>
+          </Box>
+        </div>
+      ) : null}
       <div className={styles.container}>
         <Stack
           direction="horizontal"

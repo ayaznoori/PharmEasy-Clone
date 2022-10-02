@@ -5,7 +5,7 @@
   background-color: white;
   align-items: center;
   padding: 10px 0px 10px 25px;
-  gap: 45px;
+  gap: 15px;
   color: black;
 }
 .LinkDiv {
@@ -40,4 +40,8 @@
 .links2Icons {
   display: flex;
   align-items: center;
+}
+.imageDiv{
+  width: 190px;
+  border-right: 1px solid #b5b5b5;
 }

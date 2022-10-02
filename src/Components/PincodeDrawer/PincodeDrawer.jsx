@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   Drawer,
   DrawerBody,
@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import styles from "./pdrawer.module.css";
 import { FcHome, FcShipped, FcTodoList } from "react-icons/fc";
+import axios from "axios";
 
 const data = [
   {
@@ -45,21 +46,57 @@ const data = [
 const PincodeDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
+  const [pin, setPin] = useState("");
+  const [text, setText] = useState("Select Pincode");
+
+  const searchCity = async () => {
+    let res = await axios.get(`https://api.postalpincode.in/pincode/${pin}`);
+    onClose();
+    setText(`${pin} ${res.data[0].PostOffice[0].District}`);
+    console.log(res.data[0].PostOffice[0].District);
+  };
+
   return (
     <div>
-      <Button
-        ref={btnRef}
-        color="gray.700"
-        onClick={onOpen}
-        variant="ghost"
-        bg="white"
-        height="40px"
-        borderTopEndRadius="none"
-        borderBottomEndRadius="none"
-        _hover="none"
-      >
-        Select Pincode
-      </Button>
+      {text === "Select Pincode" ? (
+        <Button
+          ref={btnRef}
+          color="gray.700"
+          onClick={onOpen}
+          variant="ghost"
+          bg="white"
+          height="40px"
+          borderTopEndRadius="none"
+          borderBottomEndRadius="none"
+          _hover="none"
+        >
+          {text}
+        </Button>
+      ) : (
+        <Button
+          ref={btnRef}
+          color="#30363c"
+          onClick={onOpen}
+          variant="ghost"
+          bg="white"
+          height="40px"
+          fontSize={"14px"}
+          noOfLines={2}
+          borderTopEndRadius="none"
+          borderBottomEndRadius="none"
+          _hover="none"
+          textAlign="left"
+          fontWeight={"500"}
+        >
+          <span
+            style={{ fontSize: "12px", color: "#4F585E", fontWeight: "400" }}
+          >
+            Delivery to
+          </span>
+          <br />
+          {text}
+        </Button>
+      )}
       <Drawer
         isOpen={isOpen}
         placement="right"
@@ -92,6 +129,7 @@ const PincodeDrawer = () => {
                 placeholder="Enter PIN Code"
                 borderRadius="8px"
                 _hover="none"
+                onChange={(e) => setPin(e.target.value)}
               />
               <InputRightElement height="50px" width="140px">
                 <Button
@@ -103,6 +141,8 @@ const PincodeDrawer = () => {
                   color="white"
                   fontSize="14px"
                   fontWeight="800"
+                  onClick={searchCity}
+                  _hover="none"
                 >
                   Check
                 </Button>
