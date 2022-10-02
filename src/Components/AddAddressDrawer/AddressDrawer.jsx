@@ -19,15 +19,28 @@ import {
   Radio,
 } from "@chakra-ui/react";
 import styles from "./AddDrawer.module.css";
-
+import {useNavigate} from 'react-router-dom'
 const AddressDrawer = () => {
+  const navigate=useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
-  const [data, setData ] = useState({});
+  const [address, setAddress] = useState({});
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setAddress({
+      ...address, 
+      [name]: value,
+    })
+  };
+  const handleClick = () => {
+    console.log(address);
+    localStorage.setItem("address", JSON.stringify(address));
+    window.location.reload(true);
+  }
 
   return (
     <>
-      <Button
+     {!address?<Button
         variant="solid"
         //   className={styles.addAddressButton}
         width="354px"
@@ -43,7 +56,23 @@ const AddressDrawer = () => {
         onClick={onOpen}
       >
         Add Delivery Address
-      </Button>
+      </Button>:<Button
+        variant="solid"
+        //   className={styles.addAddressButton}
+        width="354px"
+        height="45px"
+        backgroundColor="#10847e"
+        border="1px solid #10847e"
+        fontWeight="700"
+        fontSize="16px"
+        fontFamily='"Open Sans", sans-serif'
+        marginTop="25px"
+        color="white"
+        _hover={{ bg: "#0c6964" }}
+        onClick={()=>navigate('/payment')}
+      >
+       Buy Now
+      </Button>}
       <Drawer
         isOpen={isOpen}
         placement="right"
@@ -96,7 +125,7 @@ const AddressDrawer = () => {
               >
                 Bill To<span style={{ color: "red" }}>*</span>
               </Text>
-              <Input size="lg" />
+              <Input size="lg" name="bill" value={address.bill} onChange={handleChange} />
               <Text
                 m="7px 0 0 10px"
                 fontSize="13px"
@@ -120,7 +149,7 @@ const AddressDrawer = () => {
               >
                 Mobile Number<span style={{ color: "red" }}>*</span>
               </Text>
-              <Input size="lg" />
+              <Input size="lg" name="mobNumber" type="number" value={address.mobNumber} onChange={handleChange} />
               <Text
                 m="7px 0 0 10px"
                 fontSize="13px"
@@ -145,7 +174,7 @@ const AddressDrawer = () => {
                 Building Name and Flat Number
                 <span style={{ color: "red" }}>*</span>
               </Text>
-              <Input size="lg" />
+              <Input size="lg" name="buildingName" value={address.buildingName} onChange={handleChange} />
             </Box>
 
             <Box m="30px 0 0 0">
@@ -159,7 +188,7 @@ const AddressDrawer = () => {
               >
                 Street Name<span style={{ color: "red" }}>*</span>
               </Text>
-              <Input size="lg" />
+              <Input size="lg" name="streetName" value={address.streetName} onChange={handleChange} />
             </Box>
 
             <Box m="30px 0 0 0">
@@ -173,7 +202,7 @@ const AddressDrawer = () => {
               >
                 Pincode<span style={{ color: "red" }}>*</span>
               </Text>
-              <Input size="lg" w="140px" p="0 10px" />
+              <Input size="lg" w="140px" p="0 10px" type="number" name="pincode" value={address.pincode} onChange={handleChange} />
             </Box>
 
             <Box m="30px 0 0 0">
@@ -187,7 +216,7 @@ const AddressDrawer = () => {
               >
                 Pincode<span style={{ color: "red" }}>*</span>
               </Text>
-              <RadioGroup fontSize="12px">
+              <RadioGroup fontSize="12px" name="addType" value={address.addType} onChange={handleChange}>
                 <Stack
                   spacing={5}
                   direction="row"
@@ -200,9 +229,9 @@ const AddressDrawer = () => {
                   fontFamily='"Open Sans", sans-serif'
                   fontWeight="300"
                 >
-                  <Radio value="1">Home</Radio>
-                  <Radio value="2">Work</Radio>
-                  <Radio value="3">Others</Radio>
+                  <Radio value="home">Home</Radio>
+                  <Radio value="work">Work</Radio>
+                  <Radio value="others">Others</Radio>
                 </Stack>
               </RadioGroup>
             </Box>
@@ -216,7 +245,9 @@ const AddressDrawer = () => {
                 fontWeight="700"
                 fontFamily='"Open Sans", sans-serif'
                 p="0 20px"
-                _hover={{bg:"gray"}}
+                _hover={{ bg: "gray" }}
+                onClick={handleClick}
+                type="submit"
               >
                 SAVE
               </Button>

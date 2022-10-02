@@ -56,7 +56,7 @@ function updateqty(id,value) {
               </button>
             </div>
           </div>
-          <div className={styles.producerCompany}>{data.storename}</div>
+          <div className={styles.producerCompany}>By {data.storename}</div>
           <div className={styles.itemQuantityWrapper}>
             <p className={styles.itemQuantity}></p>
           </div>

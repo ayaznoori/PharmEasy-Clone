@@ -1,5 +1,4 @@
 .mainContainer {
-  border: 2px solid black;
   width: 1024px;
   /* height: 900px; */
   display: flex;
@@ -9,13 +8,11 @@
 }
 
 .leftContainer {
-  border: 1px solid red;
   width: 592px;
-  height: 1150px;
+  height: 1158px;
 }
 
 .offerTitleWrapper {
-  border: 1px solid black;
   width: 592px;
   height: 52px;
   padding: 0 0 20px;
@@ -36,6 +33,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .paytmIconWrapper {
@@ -101,6 +99,7 @@
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
   text-align: left;
+  margin-bottom: 30px;
 }
 
 .upiPaymentWrapper {
@@ -256,7 +255,7 @@
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   text-align: left;
-  margin-top: -8px;
+  margin-top: 0px;
 }
 
 /* **** */
@@ -306,12 +305,45 @@
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   text-align: left;
-  margin-top: -8px;
+  margin-top: 0px;
   width: 458px;
 }
 
 .rightContainer {
-  border: 1px solid black;
   width: 352px;
   height: 900px;
+}
+
+.priceDetailsWrapper {
+  width: 360px;
+  height: 230px;
+  position: relative;
+  top: -390px;
+  right: 10%;
+}
+
+.lineBreaker {
+  border:  1px dotted lightgray;
+}
+
+.savingsWrapper {
+  width: 360px;
+  height: 50px;
+  position: relative;
+  top: -390px;
+  right: 10%;
+  border: 1.7px dotted #3bb896;
+  background-color: #f2fff8;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.savingSpan {
+  font-size: 16px;
+  color: #3bb896;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
 }
