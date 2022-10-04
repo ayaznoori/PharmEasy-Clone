@@ -148,7 +148,7 @@ app.get('/products/:id',async(req,res)=>{
   res.send(data)
 })
 
-app.listen(8080,async ()=>{
+app.listen(process.env.PORT || 3030,async ()=>{
 try{
 await mongoose.connect('mongodb+srv://ayaznoori15:Alam%40123@cluster0.tfjgqr1.mongodb.net/user?retryWrites=true&w=majority')
 console.log("hello")
