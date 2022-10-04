@@ -38,7 +38,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
      axios
-      .get(`http://localhost:8080/products/${id}`)
+      .get(`https://pharmeasy-backend.onrender.com/products/${id}`)
       .then((res) => { setShowImg(res.data[0].img1);setProduct(res.data[0])})
       setQty(precart.length);
   }, []);
