@@ -16,7 +16,7 @@ const Account = () => {
    async function handlesave(event){
     event.preventDefault();
     console.log(userdata)
-    let update = await axios.post("http://localhost:8080/updateUser", userdata);
+    let update = await axios.post("https://pharmeasy-backend.onrender.com/updateUser", userdata);
     console.log(update);
     localStorage.setItem('userdetail',JSON.stringify(userdata));
     window.location.reload(true)
