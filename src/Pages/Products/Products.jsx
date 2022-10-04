@@ -39,7 +39,7 @@ const Products = () => {
     const getData = async () => {
       setLoading(true);
       let res = await axios.get(
-        `http://localhost:8080/products?category=${category}`
+        `https://pharmeasy-backend.onrender.com/products?category=${category}`
       );
       setData(res.data);
       setLoading(false);
@@ -75,7 +75,7 @@ const Products = () => {
         <div style={{marginBottom:"40px", display:"flex", alignItems:"center"}}>
           <Breadcrumb color="gray.800" separator={<MdKeyboardArrowRight fontSize={"14px"} />}>
             <BreadcrumbItem>
-              <BreadcrumbLink href="http://localhost:3000" fontSize={"13px"} color="gray.800">
+              <BreadcrumbLink href="/" fontSize={"13px"} color="gray.800">
                 Home
               </BreadcrumbLink>
             </BreadcrumbItem>
