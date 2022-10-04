@@ -50,7 +50,7 @@ const Login = () => {
     } else {
       setShow(false);
     }
-    let res = await axios.post("http://localhost:8080/sendOtp", email);
+    let res = await axios.post("https://pharmeasy-backend.onrender.com/sendOtp", email);
     console.log(res);
   };
 
@@ -59,14 +59,14 @@ const Login = () => {
   };
 
   const Signup = async () => {
-    let res = await axios.post("http://localhost:8080/verify", {
+    let res = await axios.post("https://pharmeasy-backend.onrender.com/verify", {
       email: email.email,
       otp: otp,
     });
     console.log("before res",res)
     if ((res.data.msg = "Verified successfully")) {
       console.log(res);
-      let signup = await axios.post("http://localhost:8080/signup", {
+      let signup = await axios.post("https://pharmeasy-backend.onrender.com/signup", {
         email: email.email
       });
       console.log(signup);
