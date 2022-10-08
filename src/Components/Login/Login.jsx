@@ -45,7 +45,8 @@ const Login = () => {
 
   const handleClick = async () => {
     // console.log(email)
-    if (email.email === "") {
+    if (email.email === "" || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.email)) {
+      alert("Incorrect Email Id")
       setShow(true);
     } else {
       setShow(false);
@@ -145,7 +146,7 @@ const Login = () => {
                         height="50px"
                         borderColor="#767676"
                         _hover="none"
-                        type={"text"}
+                        type={"email"}
                         placeholder="Enter your email address"
                         onChange={handleChange}
                         name="email"
