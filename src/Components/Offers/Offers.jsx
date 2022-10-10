@@ -32,7 +32,7 @@ const Offers = () => {
     setQuery(e.target.value);
     setShow(true);
     let res = await axios.get(
-      `http://localhost:8080/products?name=${e.target.value}`
+      `https://pharmeasy-backend.onrender.com/products?name=${e.target.value}`
     );
     setData(res.data);
   };
