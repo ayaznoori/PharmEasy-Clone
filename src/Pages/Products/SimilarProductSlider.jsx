@@ -29,7 +29,7 @@ const  SimilarProductSlider = () => {
     
 useEffect(()=>{
     axios
-    .get("http://localhost:8080/products")
+    .get("https://pharmeasy-backend.onrender.com/products/")
     .then((res)=> setProductData(res.data))
 },[])
 
