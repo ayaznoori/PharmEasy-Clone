@@ -1,13 +1,118 @@
-.container{
-    border: 1px solid green;
-    margin:0;
+.maindiv {
+    width: 70%;
+    height: 2000px;
+    margin: auto;
+    margin-top: 50px;
     display: flex;
-    height: 80vh;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.leftdiv {
+    width: 30%;
+    height: 1000px;
+}
+.leftmain{
+    border:1px solid gray;
+    border-radius: 5px;
+}
+.rightdiv {
+    width: 65%;
+    height: 400px;
+    
+   
+}
+
+.ordersDiv {
+    color: #4f585e;
+    line-height: 2.5;
+    margin-top: 20px;
+    margin-left:20px;
+}
+
+.orderSubdiv1 {
+    display: flex;
     align-items: center;
 }
-.centerdiv{
-   width: 800px;
-   height: 400px;
-   border: 1px solid red;
+
+.savebutton {
+    background-color:#e0e0e0;
+    width: 112px;
+    height: 32px;
+    color: rgba(16, 16, 16, 0.3);
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 20px;
+    display: flex;
+    border:none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-left: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+}
+.savebutton:hover{
+    background-color: teal;
+    color:white;
+}
+
+.inputdiv {
+    margin-top: -10px
+}
+
+.input {
+    border:1px solid #8897a2;
+    font-size: 15px;
+    height: 38px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.star {
+    color: #f76b6d;
+    padding-left: 1px;
+}
+
+.spanName {
+    font-size: 14px;
+    color: #8897a2
+}
+
+.form {
+    width: 90%;
+    margin: auto;
+    margin-left: 25px;
+    line-height: 3.5
+}
+.subheading{
+    font-size:16px;
+    font-weight:bold;
+    margin-left: 20px;
+}
+.accountIcon{
+    font-size: 35px;
+    color:teal;
+    border-radius: 50%;
+}
+.icons{
+    height:20px;
+    width:20px;
+    color:rgb(118,118,118);
+    vertical-align: middle;
+}
+.leftdivSubheading{
+    font-size: 13px;
+    font-weight:700;
+    color:rgb(92,89,96);
+    margin-left:30px;
+}
+.leftsubunder{
+    margin-left:60px
+}
+.rightmain{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 5px;
+    height:380px;
+    
 }
