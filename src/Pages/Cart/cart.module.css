@@ -7,10 +7,11 @@
 }
 
 .leftContainer {
-  width: 39.3%;
+  width: 40.3%;
 }
 
 .rightContainer {
+  margin-left: 100px;
   width: 30%;
 }
 
